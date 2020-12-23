@@ -78,7 +78,7 @@ def viewMenu():
     pass
 
 
-def menu(countryData):
+def menu(countryData, region = '四川'):
     """
     输入系统功能编号 运行对应功能
     1 -> 绘制地区各城市分类柱状图（确诊、死亡、治愈、新增）
@@ -87,6 +87,7 @@ def menu(countryData):
     4 -> 绘制地区疫情统计地图
     5 -> 绘制疫情热门词汇展示
     :param countryData: 全国疫情数据
+    :param region: 地区名称  默认四川
     :return:
     """
     status = True
@@ -95,13 +96,13 @@ def menu(countryData):
         viewMenu()
         number = int(input("输入项目对应功能编号选择运行功能："))
         if 1 == number:
-            countryDataByRegion(countryData, '四川')
+            countryDataByRegion(countryData, region)
         elif 2 == number:
-            drawChartByRegion(countryData, '四川')
+            drawChartByRegion(countryData, region)
         elif 3 == number:
-            drawChartColumn(countryData, '四川')
+            drawChartColumn(countryData, region)
         elif 4 == number:
-            dramMapByRegion(countryData, '四川')
+            dramMapByRegion(countryData, region)
             print("\n\n生成成功，前往 {}文件夹下查看网页地图\n\n".format(const.SAVE_MAP_PATH))
         elif 5 == number:
             DramMapHotWords(const.SAVE_TXT_PATH)
