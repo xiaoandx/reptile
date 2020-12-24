@@ -1,8 +1,9 @@
 # 
 
 <p align="center">
-  <img width="200" src="https://codechina-uploads.obs.cn-north-4.myhuaweicloud.com/project/avatar/15755/template__1_.png?response-content-disposition=inline%3B%20filename%3D%22template__1_.png%22%3B%20filename%2A%3DUTF-8%27%27template__1_.png&response-content-type=image%2Fpng&X-Amz-Expires=600&X-Amz-Date=20201223T135803Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=QK3ORGAKW2CFPLGKCDJI%2F20201223%2Fcn-north-4%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1d0017d88a0f3f46077f11b30358e63285e7f9079e7b60d40bf4c52f905b7318">
+  <img src="https://i.loli.net/2020/12/24/jQXFlh7NVHkfB1J.png" alt="image-20201224181740779" style="zoom:50%;">
 </p>
+
 
 
 
@@ -19,7 +20,6 @@
   <a href="https://github.com/xiaoandx/exam">
     <img src="https://img.shields.io/badge/versions-1.4.0-brightgreen" alt="donate">
 </p>
-
 
 
 简体中文 
