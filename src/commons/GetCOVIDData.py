@@ -32,6 +32,28 @@ def getCountryData(REQUEST_URL):
     return json.loads(requests.get(url=url).json()['data'])
     pass
 
+def supplementaryName(city):
+    """
+    添加城市名称全名(目前仅限四川内)
+    :param city: 城市名称(目前仅限四川)
+    :return :   补充完成的城市完整名称
+    """
+    status = -1
+    autonomousRegion =["阿坝", "甘孜", "凉山"]
+    for index, i in enumerate(autonomousRegion):
+        if i == city:
+            status = index
+            break
+    if status == -1:
+        return city + '市'
+    elif status == 0:
+        return city + '藏族羌族自治州'
+    elif status == 1:
+        return city + '藏族自治州'
+    elif status == 2:
+        return city + '彝族自治州'
+    pass
+
 def findRegionDataList(data, region):
     """
     查询指定地区疫情汇总数据
@@ -56,7 +78,8 @@ def findRegionDataList(data, region):
     total_data = {}
     for item in regionData['children']:
         if item['name'] not in total_data:
-            total_data.update({item['name'] + "市": item['total']['confirm']})
+            name = supplementaryName(item['name'])
+            total_data.update({name: item['total']['confirm']})
 
     # 解析疑似数据
     total_suspect_data = {}
