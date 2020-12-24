@@ -27,7 +27,7 @@ from commons.CommonsException import inputException
 from draw.DramMapByRegion import dramMapByRegion
 from draw.DrawRegionalComparisonHistogram import drawChartColumn
 from draw.DistrictChart import countryDataByRegion, findRegionDataList, saveCSVByRegion, drawChartByRegion
-from draw.StatisticalHighFrequencyWord import DramMapHotWords
+from draw.StatisticalHighFrequencyWord import dramMapHotWords
 
 
 def main():
@@ -105,7 +105,7 @@ def menu(countryData, region = '四川'):
             dramMapByRegion(countryData, region)
             print("\n\n生成成功，前往 {}文件夹下查看网页地图\n\n".format(const.SAVE_MAP_PATH))
         elif 5 == number:
-            DramMapHotWords(const.SAVE_TXT_PATH)
+            dramMapHotWords(const.SAVE_TXT_PATH)
             print("\n\n生成成功，前往 {}文件夹下查看词云地图\n\n".format(const.SAVE_MAP_PATH))
         elif 6 == number:
             status = False
@@ -118,3 +118,4 @@ def menu(countryData, region = '四川'):
 if __name__ == '__main__':
     countryData = getCountryData(const.REQUEST_URL)
     menu(countryData)
+

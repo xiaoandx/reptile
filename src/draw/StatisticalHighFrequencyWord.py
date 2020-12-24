@@ -26,7 +26,7 @@ from commons.Constant import const
 from commons.SaveFile import saveStatisticalHighFrequencyWord
 
 
-def DramMapHotWords(saveTxtDataURL):
+def dramMapHotWords(saveTxtDataURL):
     """
     解析词频绘制集合，并生成对应的疫情词云图
     :param saveTxtDataURL:

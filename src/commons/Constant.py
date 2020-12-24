@@ -54,6 +54,11 @@ html地图数据表格保存路径
 const.SAVE_MAP_PATH = r'./file/map/'
 
 """
+html地图数据表格保存路径
+"""
+const.WINDOW_ICO_PATH = r'./file/img/ico/favicon.ico'
+
+"""
 数据爬虫URL地址
 """
 const.REQUEST_URL = "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5"
