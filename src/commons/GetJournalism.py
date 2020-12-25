@@ -16,10 +16,10 @@
  @Version: V1.0
  @Others:  Running test instructions
 """
-import requests, re, csv, sys, time
+import requests
+import time
 from bs4 import BeautifulSoup
 from lxml import html
-from fake_useragent import UserAgent
 
 from .Constant import const
 
@@ -47,10 +47,7 @@ def spider_html_info(url,f):
     :return:    下一次爬取数据的页面地址
     """
     try:
-        headers = {
-            "User-Agent": UserAgent().chrome
-        }
-        response = requests.get(url=url, headers=headers).text
+        response = requests.get(url=url).text
         text_html = html.fromstring(response)
 
         # 获取下一页链接,先其他元素获取一页链接，保证程序的强壮性

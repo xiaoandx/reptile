@@ -139,7 +139,6 @@ class Ui_MainWindow(object):
         pass
 
     def runDramMapHotWords(self):
-        dramMapByRegion(countryData, region)
         dramMapHotWords(const.SAVE_TXT_PATH)
         self.plainTextEdit.setPlainText("生成成功，前往 {}文件夹下查看词云地图".format(const.SAVE_MAP_PATH))
         pass
