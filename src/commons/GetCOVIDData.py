@@ -67,7 +67,7 @@ def findRegionDataList(data, region):
             regionData = i
             break
 
-    # 显示湖北省数据
+    # 显示地区数据
     res = regionData['children']
     # for item in res:
     #     print(item)
