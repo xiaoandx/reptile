@@ -39,19 +39,19 @@ def drawChartColumn(data, region):
         saveCSVByRegionContrast(findRegionDataList(data, region))
     data = pd.read_csv(n)
     # 设置窗口
-    fig, ax = plt.subplots(1, 1)
-    print(data['province'])
+    fig, ax = plt.subplots(1, 1, figsize=(20, 15))
     # 设置绘图风格及字体
     sns.set_style("whitegrid", {'font.sans-serif': ['simhei', 'Arial']})
     # 绘制柱状图
     g = sns.barplot(x="province", y="data", hue="tpye", data=data, ax=ax,
-                    palette=sns.color_palette("hls", 8))
+                    palette=sns.color_palette("hls", 10))
     # 设置Axes的标题
     ax.set_title(region + '疫情最新对比情况')
     # 设置坐标轴文字方向
     ax.set_xticklabels(ax.get_xticklabels(), rotation=-60)
     # 设置坐标轴刻度的字体大小
-    ax.tick_params(axis='x', labelsize=8)
-    ax.tick_params(axis='y', labelsize=8)
+    ax.tick_params(axis='x', labelsize=15)
+    ax.tick_params(axis='y', labelsize=15)
+
     plt.show()
     pass

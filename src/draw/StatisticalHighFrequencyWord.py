@@ -16,7 +16,9 @@
  @Version: V1.0
  @Others:  Running test instructions
 """
+import os
 import time
+import webbrowser
 
 from pyecharts import options as opts
 from pyecharts.charts import WordCloud
@@ -39,13 +41,16 @@ def dramMapHotWords(saveTxtDataURL):
         words.append((k,v))
     # 生成图
     wordcloud_base(words).render(const.SAVE_MAP_PATH + '十五天内疫情词云图.html')
-
+    webbrowser.open(
+        "file:\\\\\\" + os.path.abspath(os.path.dirname(os.getcwd())) +
+        "\\src\\file\\map\\" + '十五天内疫情词云图.html')
+    pass
 
 # 渲染图
 def wordcloud_base(words) -> WordCloud:
     c = (
         WordCloud()
-        .add("", words, word_size_range=[20, 100], shape=SymbolType.ROUND_RECT)
+        .add("", words, word_size_range=[20, 100], shape=SymbolType.ROUND_RECT, width=3000, height=1000)
         .set_global_opts(title_opts=opts.TitleOpts(title='十五天内新型冠状病毒疫情词云图'))
     )
     return c

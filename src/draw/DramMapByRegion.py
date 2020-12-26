@@ -18,6 +18,8 @@
 """
 import os
 import time
+import webbrowser
+
 import pandas as pd
 from pyecharts.charts import Map
 import pyecharts.options as opts
@@ -40,13 +42,16 @@ def dramMapByRegion(data, region):
     data = pd.read_csv(n)
     list_data_region = zip(list(data['province']), list(data['confirm']))
     region_data = list(list_data_region)
-    map_region_disease_dis(region_data, region).render(const.SAVE_MAP_PATH + region+'疫情地图.html')
+    map_region_disease_dis(region_data, region).render(const.SAVE_MAP_PATH + region + '疫情地图.html')
+    webbrowser.open(
+        "file:\\\\\\" + os.path.abspath(os.path.dirname(os.getcwd())) +
+        "\\src\\file\\map\\" + region + '疫情地图.html')
     pass
 
 
 def map_region_disease_dis(region_data, region) -> Map:
     c = (
-        Map().add(region, region_data, region).set_series_opts(
+        Map(init_opts=opts.InitOpts(width='2000px',height="1000px")).add(region, region_data, region).set_series_opts(
             label_opts=opts.LabelOpts(is_show=True, formatter='{b}\n{c}例')).set_global_opts(
             title_opts=opts.TitleOpts(title= region + '新型冠状病毒疫情地图（确诊数）'),
             visualmap_opts=opts.VisualMapOpts(is_show=True,
