@@ -30,7 +30,10 @@ from commons.SaveFile import saveStatisticalHighFrequencyWord
 
 def dramMapHotWords(saveTxtDataURL):
     """
-    解析词频绘制集合，并生成对应的疫情词云图
+    解析词频绘制集合，并生成对应的疫情词云图\n
+    1.传入爬虫爬取新闻数据保存在本地地址\n
+    2.调用saveStatisticalHighFrequencyWord方法爬取保存最新的新闻高频词语数据\n
+    3.读取保存在本地的高频词语CSV文件在结合pyechart生成高频词云\n
     :param saveTxtDataURL:
     :return:
     """

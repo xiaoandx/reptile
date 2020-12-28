@@ -41,7 +41,11 @@ def requestDom(url):
 
 def spider_html_info(url,f):
     """
-    解析网页中的文字数据保存在C_class.txt文件中
+    解析网页中的文字数据保存在*C_class.txt文件中\n
+    1.调用request进行新闻内容爬取\n
+    2.在通过正则或其它进行内容筛选\n
+    3.将数据保存在文件中（*C_class.txt）\n
+    4.返回下一次爬虫爬取的地址\n
     :param url: 请求地址
     :param f:   保存数据的文件对象
     :return:    下一次爬取数据的页面地址
@@ -64,6 +68,10 @@ def spider_html_info(url,f):
     return next_url
 
 def getPointURL():
+    """
+    通过爬取中国社会组织官网获取需要爬取数据的文章编号\n
+    :return str:   爬虫起点文章编号
+    """
     url = const.REQUEST_WORD_POINT_URL
     htmlObj = requestDom(url)
     soup = BeautifulSoup(htmlObj, "lxml")
@@ -72,7 +80,9 @@ def getPointURL():
 
 def getHotWords(saveTxtDataURL):
     """
-    爬取中国社会组织公共服务平台热点词汇数据
+    爬取中国社会组织公共服务平台热点词汇数据\n
+    1.先获取爬虫爬取第一篇新闻的URL；使用getPointURL函数获取第一篇文章的编号，在进行str拼接得到文章的URL地址\n
+    2.利用for循环(16篇文章)爬取新闻文章(spider_html_info方法)并将文章数据保存在本地(*C_class.txt)文件中\n
     :param saveTxtDataURL:  爬取词汇数据保存地址
     :return:
     """

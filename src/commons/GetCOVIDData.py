@@ -56,7 +56,10 @@ def supplementaryName(city):
 
 def findRegionDataList(data, region):
     """
-    查询指定地区疫情汇总数据
+    查询指定地区疫情汇总数据\n
+    1.传入全国疫情数据，地区\n
+    2.通过解析全国疫情JSON数据，循环查询得到指定地区的疫情数据\n
+    3.对查询得到的地区疫情数据分类进行封装在集合中\n
     :param region:  地区名字
     :param data:    具体地区疫情数据
     :return:
@@ -66,13 +69,6 @@ def findRegionDataList(data, region):
         if region == i['name']:
             regionData = i
             break
-
-    # 显示地区数据
-    res = regionData['children']
-    # for item in res:
-    #     print(item)
-    # else:
-    #     print("\n")
 
     # 解析确诊数据
     total_data = {}

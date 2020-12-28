@@ -51,7 +51,10 @@ def saveTxtFileByData(data, Type):
 
 def saveCSVByRegion(regionDataList):
     """
-    保存地区各城市疫情汇总为csv文件
+    保存地区各城市疫情汇总为csv文件\n
+    1.传入从全国数据中筛选得到指定地区疫情数据\n
+    2.循环读取地区城市对应分类疫情数据\n
+    3.在将爬虫数据保存在本地CSV文件中\n
     :param regionDataList:  地区疫情统计汇总
     :return:
     """
@@ -76,10 +79,12 @@ def saveCSVByRegion(regionDataList):
 
 def saveCSVByRegionContrast(regionDataList):
     """
-        保存地区各城市疫情对比csv文件
-        :param regionDataList:  地区疫情统计汇总
-        :return:
-        """
+    保存地区各城市疫情对比csv文件\n
+    1.传入最新地区对比疫情数据\n
+    2.通过解析筛选地区各城市的疫情数据，循环写入本地CSV文件中\n
+    :param regionDataList:  地区对比疫情统计集合
+    :return:
+    """
     names = list(regionDataList[1].keys())
     num1 = list(regionDataList[1].values())
     num2 = list(regionDataList[2].values())
@@ -105,7 +110,13 @@ def saveCSVByRegionContrast(regionDataList):
 
 def saveStatisticalHighFrequencyWord(saveTxtDataURL):
     """
-    分析前半个月的疫情热点词汇
+    分析前半个月的疫情热点词汇\n
+    1.判断本地是否有最新的新闻内容爬虫数据文件，如果没有则执行2，反正存在跳过2\n
+    [2].通过getHotWords方法爬取最新的新闻数据并将数据保存在本地(*C_class.txt)\n
+    3.读取本地的(*C_class.txt)新闻内容数据，在对数据进行”数据清洗“，得到分词后的新闻内容数据并保存在本地(*C_class_fenxi.txt)\n
+    4.读取本地分析清洗的新闻内容数据(*C_class_fenxi.txt),通过调用jieba方法统计每个词语在所有新闻词汇中出现的次数(频率)\n
+        本保存每个词汇的频率到本地文件(*-fc.csv")\n
+    5.将4得到的数据集合进行返回(注意：数据也会本地保存)
     :param saveTxtDataURL:  爬取词汇数据保存地址
     :return: 词汇频率汇总
     """

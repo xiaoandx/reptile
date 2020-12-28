@@ -29,7 +29,9 @@ from commons.GetCOVIDData import findRegionDataList
 
 def countryDataByRegion(data, region):
     """
-    绘制地区各城市柱状图（确诊、死亡、治愈、新增）
+    绘制地区各城市柱状图（确诊、死亡、治愈、新增）\n
+    1.通过传入的全国疫情数据、地区名称 筛选出指定地区的疫情数据\n
+    2.在利用得到的数据生成柱状图\n
     :param data: 全部疫情数据
     :param region: 区域名称 如：四川
     :return:
@@ -97,7 +99,11 @@ def countryDataByRegion(data, region):
 
 def drawChartByRegion(data, region):
     """
-    绘制地区城市统计柱状图
+    绘制地区城市统计柱状图\n
+    1.传入全国疫情数据，地区\n
+    2.先判断系统本地是否已经爬取保存当天最新的疫情数据 如果没有最新数据CSV，则执行3，反正跳过3\n
+    [3].通过findRegionDataList获取指定地区的疫情数据并调用saveCSVByRegion保存最新的数据\n
+    4.利用爬取到数据进行绘制地区城市统计柱状图\n
     :param data: 全部疫情数据
     :param region: 区域名称 如：四川
     :return:

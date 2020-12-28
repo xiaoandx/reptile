@@ -32,25 +32,44 @@ from draw.StatisticalHighFrequencyWord import dramMapHotWords
 
 
 def runCountryDataByRegion():
+    """
+        绘制四川各城市分类柱状图 按钮绑定函数
+    """
     countryDataByRegion(countryData, region)
     pass
 
 
 def runDrawChartByRegion():
+    """
+        绘制四川各城市感染总数柱状图 按钮绑定函数
+    """
     drawChartByRegion(countryData, region)
     pass
 
 
 def runDrawChartColumn():
+    """
+        绘制四川各城市疫情对比柱状图 按钮绑定函数
+    """
     drawChartColumn(countryData, region)
     pass
 
 
 def getApp():
+    """
+        获取窗口对象
+    """
     return QApplication(sys.argv)
 
 
 class Ui_MainWindow(object):
+    """
+        1.可视化GUI窗口创建与布局设置类\n
+        2.setipUi设置窗口布局及按钮样式\n
+        3.retranslateUi设置窗口中组件的属性（Text、clicked等）\n
+        4.runDramMapByRegion运行生成疫情统计地图方法(与对应按钮绑定，点击才运行)\n
+        5.runDramMapHotWords运行生成疫新闻高频词云方法(与对应按钮绑定，点击才运行)\n
+    """
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setFixedSize(965, 793)
@@ -301,17 +320,27 @@ class Ui_MainWindow(object):
         pass
 
     def runDramMapByRegion(self):
+        """
+            运行生成疫情统计地图方法 按钮绑定事件
+        """
         dramMapByRegion(countryData, region)
         self.plainTextEdit.setPlainText("生成成功，前往 {}文件夹下查看网页地图".format(const.SAVE_MAP_PATH))
         pass
 
     def runDramMapHotWords(self):
+        """
+            运行新闻高频词云方法 按钮绑定事件
+        """
         dramMapHotWords(const.SAVE_TXT_PATH)
         self.plainTextEdit.setPlainText("生成成功，前往 {}文件夹下查看词云地图".format(const.SAVE_MAP_PATH))
         pass
 
 
 if __name__ == "__main__":
+    """
+        1.运行项目窗口GUI界面时候需要先获取全国最新的疫情数据\n
+        2.数据获取成功后就调用QMainWindow() class 运行窗口
+    """
     countryData = getCountryData(const.REQUEST_URL)
     region = '四川'
     app = getApp()

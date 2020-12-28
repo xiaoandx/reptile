@@ -31,7 +31,11 @@ from commons.Constant import const
 
 def dramMapByRegion(data, region):
     """
-    绘制地区地图页面
+    绘制地区地图页面\n
+    1.传入全国疫情数据，地区\n
+    2.先判断系统本地是否已经爬取保存当天最新的疫情数据 如果没有最新数据CSV，则执行3，反正跳过3\n
+    [3].通过findRegionDataList获取指定地区的疫情数据并调用saveCSVByRegion保存最新的数据到本地\n
+    4.在读取本地最新的疫情CSV文件中数据在结合pyecharts生成最新的疫情地图\n
     :param data:
     :param region:
     :return:

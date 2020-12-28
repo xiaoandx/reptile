@@ -29,7 +29,12 @@ from commons.Constant import const
 
 def drawChartColumn(data, region):
     """
-    绘制区域内城市对比柱状图
+    绘制区域内城市对比柱状图\n
+    1.传入全国疫情数据，地区名称\n
+    2.判断本地是否存在今天最新的爬虫数据（疫情）；如果本地没有当天最新对比的爬虫数据，则需要执行3，反正跳过3\n
+    [3].本地没有最新地区对比疫情数据，则需要通过findRegionDataList方法从全国数据中筛选地区对比疫情数据，\n
+        在调用saveCSVByRegionContrast方法将爬虫得到数据保存在本地，供可视化使用\n
+    4.解析本地最新的CSV疫情数据，在进行可视化\n
     :param data: 全部疫情数据
     :param region: 区域名称 如：四川
     :return:
