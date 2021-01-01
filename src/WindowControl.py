@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: UTF-8 -*-
 """
  Copyright (c) 2020 WEI.ZHOU. All rights reserved.
  The following code snippets are only used for circulation and cannot be used for business.
@@ -13,8 +11,12 @@
  @File: WindowControl.py
  @Author: WEI.ZHOU
  @Date: 2020-12-24 10:33:31
- @Version: V1.0
+ @Version: V1.7
  @Others:  Running test instructions
+            v1.7.0 说明
+                1，修改窗口GUI布局，限定窗口的指定大侠不可以放大；添加页面内容，使其丰富
+                2. 添加按钮样式，按钮全部修改样式为黑底白字
+                3. 添加小组成员，添加小组成员的头像
 """
 import sys
 
@@ -70,6 +72,7 @@ class Ui_MainWindow(object):
         4.runDramMapByRegion运行生成疫情统计地图方法(与对应按钮绑定，点击才运行)\n
         5.runDramMapHotWords运行生成疫新闻高频词云方法(与对应按钮绑定，点击才运行)\n
     """
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setFixedSize(965, 793)
@@ -230,8 +233,21 @@ class Ui_MainWindow(object):
         self.toolButton.setGeometry(QtCore.QRect(50, 70, 121, 131))
         self.toolButton.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toolButton.setStyleSheet("border:none;")
+        # zw
         icon = QtGui.QIcon()
+        # lmr
+        icon2 = QtGui.QIcon()
+        # yx
+        icon3 = QtGui.QIcon()
+        # lsl
+        icon4 = QtGui.QIcon()
+        # dpc
+        icon5 = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("file/img/ico/zw.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("file/img/ico/zw.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("file/img/ico/yx.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("file/img/ico/lsl.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("file/img/ico/dpc.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton.setIcon(icon)
         self.toolButton.setIconSize(QtCore.QSize(100, 100))
         self.toolButton.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
@@ -240,7 +256,7 @@ class Ui_MainWindow(object):
         self.toolButton_2.setGeometry(QtCore.QRect(50, 200, 121, 131))
         self.toolButton_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toolButton_2.setStyleSheet("border:none;")
-        self.toolButton_2.setIcon(icon)
+        self.toolButton_2.setIcon(icon2)
         self.toolButton_2.setIconSize(QtCore.QSize(100, 100))
         self.toolButton_2.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.toolButton_2.setObjectName("toolButton_2")
@@ -248,7 +264,7 @@ class Ui_MainWindow(object):
         self.toolButton_3.setGeometry(QtCore.QRect(50, 330, 121, 131))
         self.toolButton_3.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toolButton_3.setStyleSheet("border:none;")
-        self.toolButton_3.setIcon(icon)
+        self.toolButton_3.setIcon(icon3)
         self.toolButton_3.setIconSize(QtCore.QSize(100, 100))
         self.toolButton_3.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.toolButton_3.setObjectName("toolButton_3")
@@ -256,7 +272,7 @@ class Ui_MainWindow(object):
         self.toolButton_4.setGeometry(QtCore.QRect(50, 460, 121, 131))
         self.toolButton_4.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toolButton_4.setStyleSheet("border:none;")
-        self.toolButton_4.setIcon(icon)
+        self.toolButton_4.setIcon(icon4)
         self.toolButton_4.setIconSize(QtCore.QSize(100, 100))
         self.toolButton_4.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.toolButton_4.setObjectName("toolButton_4")
@@ -264,7 +280,7 @@ class Ui_MainWindow(object):
         self.toolButton_5.setGeometry(QtCore.QRect(50, 590, 121, 131))
         self.toolButton_5.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.toolButton_5.setStyleSheet("border:none;")
-        self.toolButton_5.setIcon(icon)
+        self.toolButton_5.setIcon(icon5)
         self.toolButton_5.setIconSize(QtCore.QSize(100, 100))
         self.toolButton_5.setToolButtonStyle(QtCore.Qt.ToolButtonTextUnderIcon)
         self.toolButton_5.setObjectName("toolButton_5")
