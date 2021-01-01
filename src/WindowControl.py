@@ -14,7 +14,7 @@
  @Version: V1.7
  @Others:  Running test instructions
             v1.7.0 说明
-                1，修改窗口GUI布局，限定窗口的指定大侠不可以放大；添加页面内容，使其丰富
+                1. 修改窗口GUI布局，限定窗口的指定大侠不可以放大；添加页面内容，使其丰富
                 2. 添加按钮样式，按钮全部修改样式为黑底白字
                 3. 添加小组成员，添加小组成员的头像
 """
@@ -303,7 +303,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "疫情爬虫及可视化项目"))
         self.label.setText(_translate("MainWindow", "Python 地区(四川)疫情爬虫与新闻高频词云可视化项目"))
         self.label_2.setText(_translate("MainWindow", "提示信息："))
-        self.plainTextEdit.setPlainText(_translate("MainWindow", "项目提供以下功能，点击功能按钮运行"))
+        self.plainTextEdit.setPlainText(_translate("MainWindow", "项目提供以下功能，点击左边黑色功能按钮运行"))
         self.pushButton.setText(_translate("MainWindow", "绘制四川各城市分类柱状图"))
         self.pushButton.clicked.connect(runCountryDataByRegion)
         self.label_3.setText(_translate("MainWindow", "统计显示四川疫情各地区累计确诊人数、死亡人数\n"

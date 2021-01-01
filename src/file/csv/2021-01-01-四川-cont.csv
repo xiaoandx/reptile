@@ -1,11 +1,11 @@
 province,tpye,data
-境外输入市,confirm,292
+境外输入市,confirm,299
 境外输入市,dead,0
-境外输入市,heal,269
+境外输入市,heal,281
 境外输入市,new_confirm,0
 成都市,confirm,158
 成都市,dead,3
-成都市,heal,142
+成都市,heal,145
 成都市,new_confirm,0
 广元市,confirm,6
 广元市,dead,0
@@ -15,10 +15,6 @@ province,tpye,data
 达州市,dead,0
 达州市,heal,42
 达州市,new_confirm,0
-巴中市,confirm,24
-巴中市,dead,0
-巴中市,heal,24
-巴中市,new_confirm,0
 宜宾市,confirm,12
 宜宾市,dead,0
 宜宾市,heal,12
@@ -35,6 +31,10 @@ province,tpye,data
 泸州市,dead,0
 泸州市,heal,24
 泸州市,new_confirm,0
+巴中市,confirm,24
+巴中市,dead,0
+巴中市,heal,24
+巴中市,new_confirm,0
 德阳市,confirm,18
 德阳市,dead,0
 德阳市,heal,18

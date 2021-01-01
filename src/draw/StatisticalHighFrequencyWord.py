@@ -41,7 +41,7 @@ def dramMapHotWords(saveTxtDataURL):
     c = saveStatisticalHighFrequencyWord(saveTxtDataURL)
     words = []
     for (k, v) in c.most_common(1000):
-        words.append((k,v))
+        words.append((k, v))
     # 生成图
     wordcloud_base(words).render(const.SAVE_MAP_PATH + '十五天内疫情词云图.html')
     webbrowser.open(
@@ -52,10 +52,19 @@ def dramMapHotWords(saveTxtDataURL):
 # 渲染图
 def wordcloud_base(words) -> WordCloud:
     c = (
-        WordCloud()
-        .add("", words, word_size_range=[20, 100], shape=SymbolType.ROUND_RECT, width=3000, height=1000)
-        .set_global_opts(title_opts=opts.TitleOpts(title='十五天内新型冠状病毒疫情词云图'))
-    )
+        WordCloud(init_opts=opts.InitOpts(width='1500px', height="900px"))
+            .add("",
+                 words,
+                 word_size_range=[15, 108], textstyle_opts=opts.TextStyleOpts(font_family='隶书'), shape='pentagon',
+                 mask_image='file/img/ico/jiayou.png', pos_left="5%",
+                 pos_top="1%")
+            .set_global_opts(
+            title_opts=opts.TitleOpts(title="十五天内新型冠状病毒疫情词云图"),  # 全局参数中设置标题
+            toolbox_opts=opts.ToolboxOpts(is_show=True,
+                                          feature={"saveAsImage": {},
+                                                   "dataZoom": {"yAxisIndex": "none"},
+                                                   "restore": {},
+                                                   "dataView": {}},
+                                          orient='vertical', pos_left="2%", pos_top="10%"),
+        ))
     return c
-
-
