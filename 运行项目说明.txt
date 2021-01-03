@@ -4,5 +4,11 @@
 
 1.运行InstallLibraries.py文件安装项目依赖
 2.进入src文件夹中
-3.再地址栏输入cmd
-4.再输入python TestMain.py
+3.双击运行WindowControl.py
+
+打包说明：
+1. pyinstaller -i favicon.ico  -D C:\Users\beiie-fille\Desktop\reptile\src\WindowControl.spec
+
+2.复制第三饭依赖pyecharts  jieba
+
+3.修改打卡map地址（加上exe名）

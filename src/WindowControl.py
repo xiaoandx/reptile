@@ -244,7 +244,7 @@ class Ui_MainWindow(object):
         # dpc
         icon5 = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("file/img/ico/zw.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon2.addPixmap(QtGui.QPixmap("file/img/ico/zw.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("file/img/ico/lmr.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         icon3.addPixmap(QtGui.QPixmap("file/img/ico/yx.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         icon4.addPixmap(QtGui.QPixmap("file/img/ico/lsl.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         icon5.addPixmap(QtGui.QPixmap("file/img/ico/dpc.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
