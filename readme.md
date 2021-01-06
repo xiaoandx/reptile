@@ -17,9 +17,10 @@
   <a href="https://blog.xiaoandx.club">
     <img src="https://img.shields.io/badge/author-WEI.ZHOU-brightgreen.svg" alt="author">
   </a>
-  <a href="https://github.com/xiaoandx/exam">
-    <img src="https://img.shields.io/badge/versions-1.4.0-brightgreen" alt="donate">
+  <a href="https://codechina.csdn.net/xiaoxgongzs/reptile">
+    <img src="https://img.shields.io/badge/versions-1.7.0-brightgreen" alt="donate">
 </p>
+
 
 
 简体中文 
@@ -452,9 +453,15 @@ Python四川疫情爬虫可视化项目中的绘制地区区域内分类柱状�
 
 (1) 进入项目根目录中的src文件夹中，通过运行TestMain.py文件即可启动项目
 
+
+
+## 8.3项目打包
+
+参考博客：[python项目打包exe运行](https://blog.xiaoandx.club/article/pythonPackage/)
+
  
 
-## 8.3项目结构
+## 8.4项目结构
 
 项目根目录(自定义)
 
